@@ -8,7 +8,15 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         long t0 = System.currentTimeMillis();//System.nanoTime();
+        //MODIFICAT
+         if(args.length<1)
+        {
+            System.out.println("Invalid number of arguments");
+            System.exit(-1);
+        }
+        int n=Integer.parseInt(args[0]);
 
+        /*varianta anterioara, fara argumente de la linia de comanda
         Scanner scan = new Scanner(System.in);
         System.out.println("Ex1:\nType an integer number n:");
         while (!scan.hasNextInt()) {
@@ -18,6 +26,7 @@ public class Main {
         int n = scan.nextInt();
         System.out.println("Valid number! :)\n");
 
+        */
 
         int[][] matrix = new int[n][n];
         matrix = latinSquareMatrix(n);
