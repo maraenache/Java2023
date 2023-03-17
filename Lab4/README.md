@@ -13,15 +13,18 @@
 ## Homework
 
 ------  
-- [x] Create the complete model: Person, Programmer, Designer, Company. All persons have a birth date. Each class must have at least one specific property, that others don't have (be creative).
-- [x] Each person will contain a Map defining the relathionships to other persons or companies.
-- [x] Create the Network class containing a List of identifiable nodes.
-- [x] Create a method that computes the importance of a node in the network, as the number of its connections to other nodes.
-- [x] Create a network object containing persons, companies and relationships and print it on the screen. When printing the network, the nodes must be ordered according to their importance.
+- [ ] Create a class that describes the problem.
+- [ ] Using Java Stream API, write a query that display all the students that have a number of preferences lower than the average number of preferences.
+- [ ] Use a third-party library in order to generate random fake names for students and projects.
+- [ ] Create a Greedy algorithm in order to solve the problem.
+
 
 ## Bonus
 
 ------  
-- [ ] Implement an efficient agorithm to determine if there are nodes in this networks which, if they are removed, disconnect the network.
-- [ ] Identify the blocks of the network, that is subgraphs that are maximally 2-connected.
-- [ ] Create JUnit tests for your algorithms.erate large random instances of the problem and analyze the performance of your algorithm (running times, memory consumption).
+- [ ] Implement an algorithm that determines the maximum cardinality matching
+- [ ] Create a random problem generator (with thousands of objects) and test the performance of the implementation (try both libraries)
+- [ ] Compare the results with the ones obtained by the greedy algorithm.
+- [ ] Determine a minimum cardinality set formed of students and projects with the property that each admissible pair (student-project) contains at least an element of this set.
+- [ ] Determine a maximum cardinality set of of students and projects such that there is no admissible pair (student-project) formed with elements of this set.
+
