@@ -21,6 +21,7 @@
 ## Bonus
 
 ------  
-- [ ] Implement an efficient agorithm to determine if there are nodes in this networks which, if they are removed, disconnect the network.
+- [ ] Implement an efficient agorithm to determine if there are nodes in this networks which, if they are removed, disconnect the network.-AICI am incercat doar. Am inteles algoritmul pentru puncte de articulatie de aici: https://cp-algorithms.com/graph/cutpoints.html, https://www.youtube.com/watch?v=64KK9K4RpKE si l am adaptat sa iasa pentru un graf
+
 - [ ] Identify the blocks of the network, that is subgraphs that are maximally 2-connected.
 - [ ] Create JUnit tests for your algorithms.erate large random instances of the problem and analyze the performance of your algorithm (running times, memory consumption).
