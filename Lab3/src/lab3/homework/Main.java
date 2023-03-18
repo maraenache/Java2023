@@ -36,7 +36,6 @@ public class Main {
         pMihai.addRelationship(pAndrei, "neighbours");
         pAndrei.addRelationship(pMihai, "neighbours");
 
-
         pMihai.addRelationship(cAudi, "CEO");
         cAudi.addEmployee(pMihai, "CEO");
 
@@ -69,7 +68,6 @@ public class Main {
 
         System.out.println("\n\nThe list of nodes in network, sorted by their importance\n");
         System.out.println(network);
-
     }
 }
 
@@ -101,6 +99,5 @@ Programmer | Name: Ioana, ID: 105, Number of Projects: 1, Birthday: 1999-02-26, 
 Programmer | Name: Andrei, ID: 103, Number of Projects: 7, Birthday: 1999-04-08, relationships 3 : -Mihai->neighbours; Mara->friends; Facebook->assistant;
 Designer | Name: Mara, ID: 100, Favorite color: purple, Birthday: 2003-03-11, relationships 3: -Andrei->friends; Apple->boss; Carmen->best-friends;
 Designer | Name: Mihai, ID: 101, Favorite color: red, Birthday: 2000-03-10, relationships 4: -Andrei->neighbours; Audi->CEO; Alina->best-friends; Ioana->coworkers;
-
 
 * */
