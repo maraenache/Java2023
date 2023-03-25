@@ -1,0 +1,84 @@
+Students[S0, S1, S2, S3]
+Projects[P0, P1, P2, P3]
+Students preferences{S3=[P2, P3], S2=[P2, P3], S0=[P0, P1], S1=[P0, P2, P3]}
+
+The students with the number of preferences lower than the average (2.25 )
+S0
+S2
+S3
+
+Students sorted by name and by the number of projects preferred 
+[S0, S2, S3, S1]
+
+Maximum cardinality matching between students and projects:
+S0 -> P1
+S2 -> P2
+S3 -> P3
+S1 -> P0
+-------------------------------------------
+
+Students[S0, S1, S2]
+Projects[P0, P1, P2]
+Students preferences{S2=[P0], S0=[P0, P1, P2], S1=[P0, P1]}
+
+The students with the number of preferences lower than the average (2.0 )
+S2
+
+Students sorted by name and by the number of projects preferred 
+[S2, S1, S0]
+
+Maximum cardinality matching between students and projects:
+S2 -> P0
+S1 -> P1
+S0 -> P2
+-------------------------------------------
+
+Students[Shannan, Hedy, Edward]
+Projects[Keylex, Ronstring, Tresom]
+Students preferences{Shannan=[Keylex, Ronstring], Hedy=[Ronstring], Edward=[Keylex]}
+
+The students with the number of preferences lower than the average (1.3333333333333333 )
+Hedy
+Edward
+
+Students sorted by name and by the number of projects preferred 
+[Edward, Hedy, Shannan]
+
+Maximum cardinality matching between students and projects:
+Edward -> Keylex
+Hedy -> Ronstring
+-------------------------------------------
+
+Students[Mei, Maynard, Esperanza, Laine]
+Projects[Lotstring, Otcom, Zontrax, Zoolab]
+Students preferences{Mei=[Lotstring, Zoolab], Maynard=[Otcom, Zontrax], Esperanza=[Lotstring, Zoolab, Zontrax], Laine=[Zontrax]}
+
+The students with the number of preferences lower than the average (2.0 )
+Laine
+
+Students sorted by name and by the number of projects preferred 
+[Laine, Maynard, Mei, Esperanza]
+
+Maximum cardinality matching between students and projects:
+Laine -> Zontrax
+Maynard -> Otcom
+Mei -> Lotstring
+Esperanza -> Zoolab
+-------------------------------------------
+
+Students[Zonia, Lacresha, Emmitt]
+Projects[Biodex, Home Ing, Matsoft, Tresom]
+Students preferences{Emmitt=[Biodex, Tresom], Zonia=[Home Ing, Tresom], Lacresha=[Home Ing, Matsoft]}
+
+The students with the number of preferences lower than the average (2.0 )
+
+Students sorted by name and by the number of projects preferred 
+[Emmitt, Lacresha, Zonia]
+
+Maximum cardinality matching between students and projects:
+Emmitt -> Biodex
+Lacresha -> Matsoft
+Zonia -> Home Ing
+
+
+
