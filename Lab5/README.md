@@ -30,9 +30,6 @@ https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
 ## Bonus
 
 ------  
-- [ ] Use Apache Tika in order to extract metadata from your catalog items and implement the command info in order to display them.
-- [ ] Each document has a set of tags (extracted metadata, or manually set by user). Two documents are related if they have a common tag.
-- [ ] Using a minimum number of colors (labels), assign each document a color such that related documents have distinct colors.
-- [ ] You may want to read about exact algorithms for the graph coloring problem.
-- [ ] Implement using Graph4J API Brown coloring algorithm or other coloring algorithm.
-- [ ] Create large instances of the problem and test your algorithm (against JGraphT or other library implementations).
+- [x] Use Apache Tika in order to extract metadata from your catalog items and implement the command info in order to display them.
+- [x] Each document has a set of tags (extracted metadata, or manually set by user). Two documents are related if they have a common tag. Using a minimum number of colors (labels), assign each document a color such that related documents have distinct colors.Implement using Graph4J API Brown coloring algorithm or other coloring algorithm.
+- [x] Create large instances of the problem and test your algorithm (against JGraphT or other library implementations).
