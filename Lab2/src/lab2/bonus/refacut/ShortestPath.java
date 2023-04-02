@@ -14,7 +14,7 @@ class ShortestPath {
     private final int numLocations = 100;
     private List<Location> locations;
     private static final double MAX_ROAD_LENGTH = 100;
-    //
+    
     private Graph graph;
 
     public static void main(String args[]) {
@@ -23,19 +23,16 @@ class ShortestPath {
         app.createGraph();
         app.solveProblem();
     }
-
-    //Create randomly the cities and their connections to other cities.
-    //This is the user model, it has nothing to do with Graph4J.
-    //Based on this model, a graph will be created in the method createGraph.
+    /**creez locatii random si conexiunile cu alte locatii.Pe baza acestui model,
+    se va crea un graf cu metodata createGraph*/
     void createUserModel() {
-        //create the locations
+        //creez locatiile
         locations = new ArrayList<>(numLocations);
         for (int i = 0; i < numLocations; i++) {
             locations.add(new Location("City " + i));
         }
 
-        //connect each location randomly to other locations
-        //we assume that the neighborhood relation is symmetrical
+        //conectez random locatiile
         var random = new Random();
         for (int i = 0; i < numLocations - 1; i++) {
             var loc1 = locations.get(i);
@@ -50,34 +47,34 @@ class ShortestPath {
         }
     }
 
-    //Based on the user model, a graph is created.
-    //Each vertex in the graph corresponds to a location.
-    //Weighted edges will correspond to connections between cities.
+    /**Metoda creeaza un graf pe baza modelului creat,
+    astfel incat fiecare varf corespunde unei locatii si fiecare muchie
+    corespune unei conexiuni dintre locatii. Muchiile cu cost
+    contin si lungimea drumului dintre vf incidente
+    */
     void createGraph() {
-        //create an empty graph
+        //graf nul
         this.graph = GraphBuilder.empty()
                 .estimatedNumVertices(numLocations)
                 .buildGraph();
 
-        //create a vertex for each location
-        //the vertex number will be the index of the location in the list
-        //each vertex is labeled with its location object
+        //vertex=index locatie
         for (int i = 0; i < numLocations; i++) {
             graph.addVertex(i, locations.get(i));
         }
 
-        //create the edges of the graph
+        //muchiile
         for (var location : locations) {
-            //find the vertex number of the location object
+            //numarul varfului ce coresp obiectul location
             int v = graph.findVertex(location);
             var neighborMap = location.getNeighbors();
             for (var neighbor : neighborMap.keySet()) {
                 int u = graph.findVertex(neighbor);
-                //the test prevents adding the same edge twice
+                //pt a nu adauga aceeasi muchie de 2 ori
                 if (v < u) {
-                    //get the length of the road between the two locations
+                    //lungimea drumului dintre 2 locatii
                     double length = neighborMap.get(neighbor);
-                    //add a weighted edge in the graph
+                    //pun costul pe muchie
                     graph.addEdge(v, u, length);
                 }
             }
@@ -85,36 +82,35 @@ class ShortestPath {
         assert graph.numVertices() == numLocations;
     }
 
-    //Once the graph is created, the problem can be solved.
+    /**Dupa ce am creat graful, aleg 2 locatii si apelez metoda
+    findShortestPath pentru a gasi cel mai scurt traseu 
+    */
     void solveProblem() {
-        //pick two locations
+       
         Location fromLoc = locations.get(0);
         Location toLoc = locations.get(numLocations - 1);
-        //find the shortest path between them
+
         findShortestPath(fromLoc, toLoc);
     }
 
-    //This method assumes the graph is created.
+    /**
+    Pornim de la un graf creat, gasesc indexul celor 2 locatii primite ca parametru
+    si folosesc libraria Graph4J sa creez un algoritm ce determina cel mai scurt
+    traseu, in acest caz SinglePairShortestPath
+    */
     private void findShortestPath(Location fromLoc, Location toLoc) {
-        //find the vertex numbers of the given locations
+
         int source = graph.findVertex(fromLoc);
         int target = graph.findVertex(toLoc);
 
-        //create an algorithm for determining the shortest path
-        //in this case, the algorithm is BidirectionalDijkstra.
         var alg = SinglePairShortestPath.getInstance(graph, source, target);
-        //same as
-        //var alg = new BidirectionalDijkstra(graph, source, target);
-
-        //the length (weight) of the shortest path
+       
         double length = alg.getPathWeight();
         System.out.println("The length of the shortest path: " + length);
 
-        //the actual shortest path, containing vertex numbers
         Path path = alg.findPath();
         System.out.println("The shortest path in the graph: " + path);
-
-        //the shortest path created using user objects
+        
         List<Location> route = new ArrayList<>();
         for (int v : path.vertices()) {
             route.add(locations.get(v));
