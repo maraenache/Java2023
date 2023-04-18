@@ -26,4 +26,4 @@
 ---------
 
 - [ ] Implement a non-trivial AI for the game.
-- [ ] Using Graph4J API, implement an efficient algorithm for counting all the triangles in a graph; see GraphMetrics.getNumberOfTriangles in JGraphT.
+- [ ] Using Graph4J API , implement an efficient algorithm for counting all the triangles in a graph; see GraphMetrics.getNumberOfTriangles in JGraphT.
