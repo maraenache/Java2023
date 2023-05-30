@@ -1,0 +1,6 @@
+org\example\com\SetLocale.class
+org\example\com\Info.class
+org\example\Main.class
+org\example\com\Command.class
+org\example\com\DisplayLocales.class
+org\example\app\LocaleExplore.class
